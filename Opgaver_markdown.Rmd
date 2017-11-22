@@ -22,7 +22,7 @@ data72
 
 matrix(apply(data72, 1, sum),nrow = 4)%*%(matrix(apply(data72,2,sum),nrow = 1))/sum(data72)
 
-chisq.test(data72,correct = FALSE)
+test72 <- chisq.test(data72,correct = FALSE)
 
 data72_b <- matrix(c(776,34,26,4),ncol=2,byrow = TRUE)
 
@@ -32,22 +32,26 @@ matrix(apply(data72_b, 1, sum),nrow = 2)%*%(matrix(apply(data72_b,2,sum),nrow = 
 
 chisq.test(data72_b,correct = FALSE)
 
-Satisfaction <-
-  as.table(array(c(1, 2, 0, 0, 3, 3, 1, 2,
-                   11, 17, 8, 4, 2, 3, 5, 2,
-                   1, 0, 0, 0, 1, 3, 0, 1,
-                   2, 5, 7, 9, 1, 1, 3, 6),
-                 dim = c(4, 4, 2),
-                 dimnames =
-                   list(Income =
-                          c("<5000", "5000-15000",
-                            "15000-25000", ">25000"),
-                        "Job Satisfaction" =
-                          c("V_D", "L_S", "M_S", "V_S"),
-                        Gender = c("Female", "Male"))))
-
-Satisfaction
 ```
+
+```{r}
+
+data91 <-
+  as.table(array(c(33,48,923,1722,
+                   52,29,898,678),
+                 dim = c(2,2, 2),dimnames=
+  list(
+    housing=c('rented','owner'),
+    CHG=c('yes','no'),
+    Smoke=c('Non Smokers','Smokers')
+  )))
+
+data91
+
+twoby2(data91[,,1])
+twoby2(data91[,,2])
+```
+
 
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
