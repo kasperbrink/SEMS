@@ -42,7 +42,7 @@ twoby2(data91)
 data91_2 <-
   as.table(array(c(33,48,923,1722,
                    52,29,898,678),
-                 dim = c(2,2, 2),dimnames=
+                 dim = c(2,2,2),dimnames=
   list(
     housing=c('rented','owner'),
     CHG=c('yes','no'),
@@ -51,10 +51,10 @@ data91_2 <-
 
 data91
 
-mantelhaen.test(data91)
+mantelhaen.test(data91_2)
 
-twoby2(data91[,,1])
-twoby2(data91[,,2])
+twoby2(data91_2[,,1])
+twoby2(data91_2[,,2])
 ```
 
 
